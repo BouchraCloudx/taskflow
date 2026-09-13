@@ -87,7 +87,7 @@ jobs:
             UserPoolId: '${{ needs.terraform.outputs.cognito_user_pool_id }}',
             ClientId: '${{ needs.terraform.outputs.cognito_client_id }}',
           };
-          export const API_URL = 'https://${{ needs.terraform.outputs.api_url }}';
+          export const API_URL = '${{ needs.terraform.outputs.api_url }}';
           EOF
 
       - name: Install dependencies
