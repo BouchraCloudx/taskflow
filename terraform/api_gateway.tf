@@ -4,7 +4,7 @@ resource "aws_apigatewayv2_api" "main" {
   protocol_type = "HTTP"
 
   cors_configuration {
-    allow_origins = ["http://localhost:5173", "http://localhost:5174", "http://taskflow-tf-frontend-720718979932.s3-website-us-east-1.amazonaws.com"]
+    allow_origins = ["http://localhost:5173", "http://localhost:5174", "http://${aws_s3_bucket_website_configuration.frontend.website_endpoint}"]
     allow_methods = ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
     allow_headers = ["Content-Type", "Authorization"]
     
