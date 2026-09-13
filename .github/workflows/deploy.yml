@@ -42,11 +42,11 @@ jobs:
 
       - name: Terraform Plan
         working-directory: ./terraform
-        run: terraform plan
+        run: terraform plan -var="alert_email=${{ secrets.ALERT_EMAIL }}"
 
       - name: Terraform Apply
         working-directory: ./terraform
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -var="alert_email=${{ secrets.ALERT_EMAIL }}"
 
       - name: Get Terraform outputs
         id: tf_outputs

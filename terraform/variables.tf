@@ -9,3 +9,7 @@ variable "project_name" {
   type        = string
   default     = "taskflow-tf"
 }
+variable "alert_email" {
+  description = "Email pour recevoir les alertes CloudWatch"
+  type        = string
+}
