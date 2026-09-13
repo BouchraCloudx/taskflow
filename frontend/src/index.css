@@ -1,0 +1,320 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+ 
+:root {
+  --ink: #1F1B18;
+  --ink-soft: #6B655D;
+  --paper: #F5F4F0;
+  --paper-raised: #FFFFFF;
+  --accent: #C84842;
+  --accent-ink: #7A2B26;
+  --line: #DAD5CC;
+  --done: #4A6B5A;
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+}
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+ 
+#root {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+ 
+/* ---------- Header ---------- */
+ 
+.app-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 48px 0 32px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 32px;
+}
+ 
+.app-header h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 28px;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+ 
+.app-header .user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+ 
+.app-header button {
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+ 
+.app-header button:hover {
+  color: var(--accent-ink);
+}
+ 
+/* ---------- Auth form ---------- */
+ 
+.auth-wrap {
+  max-width: 400px;
+  margin: 96px auto;
+}
+ 
+.auth-wrap h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 32px;
+  margin: 0 0 8px;
+}
+ 
+.auth-wrap p.tagline {
+  color: var(--ink-soft);
+  margin: 0 0 32px;
+  font-size: 15px;
+}
+ 
+.field {
+  margin-bottom: 16px;
+}
+ 
+.field label {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 6px;
+}
+ 
+.field input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper-raised);
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink);
+}
+ 
+.field input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(200, 72, 66, 0.15);
+}
+ 
+.btn-primary {
+  width: 100%;
+  padding: 11px;
+  background: var(--accent);
+  color: #FFF;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+ 
+.btn-primary:hover {
+  background: var(--accent-ink);
+}
+ 
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+ 
+.switch-mode {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  text-align: center;
+}
+ 
+.switch-mode button {
+  background: none;
+  border: none;
+  color: var(--accent-ink);
+  font-family: var(--font-body);
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 0;
+}
+ 
+.error-message {
+  background: rgba(200, 72, 66, 0.08);
+  border-left: 2px solid var(--accent);
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--accent-ink);
+  margin-bottom: 16px;
+}
+ 
+/* ---------- Task entry row ---------- */
+ 
+.task-entry {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 24px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+ 
+.task-entry input {
+  flex: 1;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 16px;
+  padding: 8px 2px;
+  color: var(--ink);
+}
+ 
+.task-entry input::placeholder {
+  color: var(--ink-soft);
+}
+ 
+.task-entry input:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+ 
+.task-entry button {
+  background: var(--accent);
+  color: #FFF;
+  border: none;
+  border-radius: 4px;
+  padding: 0 18px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+ 
+.task-entry button:hover {
+  background: var(--accent-ink);
+}
+ 
+.task-entry button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+ 
+/* ---------- Task list (ledger rows) ---------- */
+ 
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ 
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+ 
+.task-row .stamp {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s ease;
+}
+ 
+.task-row .stamp:hover {
+  border-color: var(--accent);
+}
+ 
+.task-row.done .stamp {
+  background: var(--done);
+  border-color: var(--done);
+}
+ 
+.task-row .stamp svg {
+  width: 11px;
+  height: 11px;
+  opacity: 0;
+}
+ 
+.task-row.done .stamp svg {
+  opacity: 1;
+}
+ 
+.task-row .title {
+  flex: 1;
+  font-size: 16px;
+}
+ 
+.task-row.done .title {
+  color: var(--ink-soft);
+  text-decoration: line-through;
+  text-decoration-color: var(--line);
+}
+ 
+.task-row .delete-btn {
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  font-size: 13px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  padding: 4px;
+}
+ 
+.task-row:hover .delete-btn {
+  opacity: 1;
+}
+ 
+.task-row .delete-btn:hover {
+  color: var(--accent-ink);
+}
+ 
+.empty-state {
+  padding: 48px 0;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+ 
+.empty-state .big {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+ 

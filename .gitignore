@@ -1,0 +1,17 @@
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/.terraform.lock.hcl
+terraform/lambda_code/*.zip
+
+# Node/React
+frontend/node_modules/
+frontend/dist/
+
+# Configs sensibles
+frontend/src/config.js
+
+# Divers
+.DS_Store
+*.log
